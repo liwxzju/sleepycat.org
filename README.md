@@ -1,4 +1,4 @@
-sleepycat_org
+sleepycat
 ============
 
 Source code of my blog, powered by Django.
