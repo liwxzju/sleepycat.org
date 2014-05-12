@@ -3,7 +3,11 @@ sleepycat
 
 Source code of my blog, powered by Python 2.7 and Django1.6.
 
-Just install Python2.7 and Django1.6 is enough.
+Python Packages:
 
-http://sleepycat.org/
++ Django
+
++ Markdown2
+
+[http://sleepycat.org/](http://sleepycat.org/)
 
