@@ -1,6 +1,5 @@
-##### Summary
 
-Source code of my blog, powered by Python 2.7 and Django1.6.
+##### Source code of my blog, powered by Python 2.7 and Django1.6.
 
 ===============
 
@@ -12,7 +11,7 @@ Source code of my blog, powered by Python 2.7 and Django1.6.
 
 ===============
 
-##### Domain Address:
+##### Blog Address:
 
 + [http://sleepycat.org/](http://sleepycat.org/)
 
