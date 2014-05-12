@@ -12,22 +12,23 @@
 <div class="content">
 <div class="article">
     <div class="article_header"><a href="/blog/archive">全部文章</a></div>
-    <div class="article_content">
+    <div class="article_content" style="">
     {% if articles %}
         {% for article in articles %}
         
-        <p style="font-size: 12px;">
+        <p style="font-size: 14px; line-height: 16px; text-indent: 0px; margin-top: 10px; ">
         
         {{ article.datetime|date:"Y-m-d" }} &nbsp;
-        <a href="/blog/{{ article.id }}" style="font-weight: bold; display: inline-table; width: 350px; vertical-align: top;">{{ article.title }}</a>
+        <a title="{% for tag in article.tags.all %}{{ tag.title }} {% endfor %}" href="/blog/{{ article.id }}" style="font-weight: normal; display: inline-table; width: 580px; vertical-align: top;">{{ article.title }}</a>
         
         &nbsp;评论({{ article.cmts }})
-        
-        &nbsp;&nbsp;标签：
+        <!-- 
+        <div style="float: right">标签：
         {% for tag in article.tags.all %}
         <a href="/blog/tag-{{ tag.slug }}">{{ tag.title }}</a>
         {% endfor %}
-        <br />
+        </div> -->
+        
         {% endfor %}
         
         </p>

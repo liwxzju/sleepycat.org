@@ -3,6 +3,7 @@ from django.db import models
 from django.forms import ModelForm
 # Create your models here.
 
+
 class Tag(models.Model):
     title    = models.CharField(max_length=200, unique=True)
     slug     = models.SlugField(max_length=200, unique=True)

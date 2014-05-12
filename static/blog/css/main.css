@@ -5,27 +5,29 @@ body {
     width: 100%;
     color: #000000;
     font-size: 14px;
-    font-family: Courier New;
-    background-image: url('../image/bg.png');
+    font-family: verdana, Courier New;
+    background-image: url('../image/bg.jpg');
     background-repeat: repeat;
     padding: 0px;
     margin: 0px;
 }
 p {
-    padding: 0px 0px 0px 0px;
+    padding: 0x 0px 0px 0px;
     margin: 10px 0px 10px 0px;
 }
 
 br {
-    padding: 0px 0px 0px 0px;
-    margin: 2px 0px 2px 0px;
+    padding: 0x 0px 0px 0px;
+    margin: 4px 0px 4px 0px;
 }
 
 hr {
+    height: 1px;
+    border: none;
     border-top: 1px solid #F0F0F0;
-    background-color: #F0F0F0;
-    color: #F0F0F0;
 }
+
+
 a {
     color: #2099AB;
     overflow: hidden;
@@ -60,7 +62,7 @@ div.logo{
 
 div.title{
     text-align: left;
-    padding: 20px 0px 0px 0px;
+    padding: 35px 0px 0px 0px;
     height: 130px;
 }
 
@@ -69,6 +71,7 @@ p.title{
     font-weight:bold;
 }
 p.moto{
+    padding: 5px 0px 0px 0px;
     font-size: 20px;
 }
 
@@ -97,8 +100,6 @@ ul.menu{
     width: 70px;
     line-height:50px;
     text-align: center;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
 }
 .menu li a.active{
     background-color: #2099AB;
@@ -110,7 +111,7 @@ ul.menu{
 }
 
 div.wrap{
-    max-width: 1000px;
+    max-width: 1080px;
     margin: 0px auto 0px auto;
     height: 100%;
 }
@@ -122,42 +123,42 @@ div.content{
 }
 
 div.article{
-    width: 730px;
-    padding: 0px 0px 35px 0px;
-    margin: 20px 0px 20px 0px;
+    width: 810px;
+    padding: 0px 0px 0px 0px;
+    margin: 20px 0px 30px 0px;
     background-color: #ffffff;
     color:#393939;
     height: 100%;
-    border-radius: 10px;
+    border-radius: 5px;
 }
 
 div.article_header{
     border-bottom: 1px solid #E1E1E1;
     font-weight: bold;
     background: url('../image/x.png') 0 0;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
     height: 48px;
-    padding: 0px 0px 0px 5px;
+    padding: 0px 20px 0px 15px;
 }
 
 div.pagination{
-    width: 710px;
+    width: 790px;
     padding: 10px 10px 10px 10px;
-    margin: 20px 0px 25px 0px;
+    margin: 20px 0px 30px 0px;
     text-align: center;
     background-color: #ffffff;
-    border-radius: 10px;
+    border-radius: 5px;
 }
 div.pagination a{
     display: block;
     font-size: 12px;
     border: 1px solid #DDD;
-    padding: 5px 10px 5px 10px;
+    padding: 3px 20px 5px 20px;
     font-weight: normal;
     background-color: #2099AB;
     color: #ffffff;
-    border-radius: 5px;
+    border-radius: 1px;
     text-decoration: none;
     display: inline; /* do not show the dot of list */
 }
@@ -169,10 +170,10 @@ div.pagination span.deactive{
     border-radius: 5px;
     font-size: 12px;
     border: 1px solid #DDD;
-    padding: 5px 10px 5px 10px;
+    padding: 3px 20px 5px 20px;
     font-weight: normal;
     background-color: #FFFFFF;
-    border-radius: 5px;
+    border-radius: 1px;
     text-decoration: none;
 }
 
@@ -183,41 +184,128 @@ span.currentpage{
 
 div.article_tags{
     float: left;
-    padding: 10px;
+    padding: 10px 10px 10px 20px;
     font-size: 12px;
-    font-weight: bold;
+    font-weight: normal;
     height: 30px;
 }
 
 div.article_datetime{
     float: right;
-    margin: 10px 10px 10px 10px;
-    padding: 5px 5px 7px 5px;
+    margin: 10px 20px 10px 10px;
+    padding: 2px 7px 8px 7px;
     font-size: 12px;
-    font-weight: bold;
+    font-weight: normal;
     height: 10px;
     color: #999;
     background-color: #FAFAFA;
-    border-radius: 5px;
+    background-color: #FFFFFF;
+    border-radius: 3px;
     border: 1px #E9E9E9 solid;
 }
 
 div.article_content{
     clear: both;
-    padding: 0px 10px 0px 10px;
+    padding: 0px 20px 10px 20px;
     margin: 10px 0px 10px 0px;
-    font-size: 13px;
+    font-size: 14px;
+    line-height: 27px;
 }
+
+
+div.article_content li p{
+    text-indent: 0px;
+}
+
+div.article_content p{
+    text-indent: 0px;
+    margin: 5px 0px 5px 0px;
+    padding: 0px 0px 0px 0px;
+}
+
+div.article_content h1 {
+    color: #000000;
+    font-size: 28px;
+}
+
+div.article_content h2 {
+    color: #000000;
+    font-size: 24px;
+}
+
+div.article_content h3 {
+    border-bottom: 2px solid #F3F3F3;
+    font-size: 18px;
+    margin: 20px 0px 0px 0px;
+}
+
+div.article_content h4 {
+    border-bottom: 1px solid #F3F3F3;
+    font-size: 16px;
+    margin: 20px 0px 0px 0px;
+}
+
+div.article_content h5 {
+    font-size: 14px;
+}
+
+div.article_content h6 {
+    color: #777777;
+    background-color: inherit;
+    font-size: 14px;
+}
+
+
+
+div.article_content blockquote{
+    color: #666666;
+    margin: 0px;
+    padding-left: 7px;
+    border-left: 9px #EEE solid;
+}
+
+div.article_content li{
+    margin: 0px 0px 0px 0px;
+    padding: 3px 0px 0px 0px;
+}
+
+
 div.article_content pre{
-    background: #EEEEEE;
-    border: 1px solid #ccc;
-    padding: 5px 10px;
-    white-space: pre-wrap;       /* css-3 */
-    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
-    white-space: -pre-wrap;      /* Opera 4-6 */
-    white-space: -o-pre-wrap;    /* Opera 7 */
-    word-wrap: break-word;       /* Internet Explorer 5.5+ */
+    background: #F6F6F6;
+    color: #5E5E5E;
+    border: 1px solid #E8E8E8;
+    padding: 5px 10px 5px 10px;
+    overflow: auto;
+    overflow-y: hidden;
+    
+    line-height: 25px;
+    border-radius: 1px;
+    font-family: Courier New;
+    font-size: 13px;
+    text-indent: 0px;
 }
+div.article_content code{
+    display: run-in;
+    border: 1px solid #ccc;
+    padding: 5px 10px 5px 10px;
+    margin: 5px 10px 5px 10px;
+    overflow: auto;
+    overflow-y: hidden;
+    
+    border-radius: 1px;
+    font-family: Courier New;
+    font-size: 13px;
+    text-indent: 0px;
+}
+
+div.article_content pre code{
+    border: 0px solid #ccc;
+    padding: 3px 3px 3px 0px;
+    margin: 0px;
+}
+
+
+
 
 div.sidebar{
     float: right;
@@ -225,7 +313,7 @@ div.sidebar{
     padding: 0px 10px 10px 10px;
     margin: 20px 0px 10px 0px;
     background-color: #ffffff;
-    border-radius: 10px;
+    border-radius: 5px;
     color:#066C75;
     height: 100%;
 }
@@ -234,7 +322,8 @@ div.recentcmt{
     margin: 10px 0px 10px 0px;
     padding: 5px 0px 5px 0px;
     border-bottom: 1px solid #DDDDDD;
-    font-size: 13px;
+    font-size: 14px;
+    line-height: 22px;
 }
 
 div.recentcmt p{
@@ -275,27 +364,28 @@ div.recentcmt a:hover{
     color: #999;
     display: block;
     border: 1px solid #DDD;
-    padding: 6px 8px;
+    padding: 6px 8px 6px 8px;
     margin-bottom: 5px;
     font-weight: normal;
     overflow: hidden;
     background-color: #F9F9F9;
-    border-radius: 5px;
+    border-radius: 3px;
     text-decoration: none;
 }
 .article_tags  a {
     color: #999;
     display: block;
     border: 1px solid #dddddd;
-    padding: 5px 5px 5px 5px;
+    padding: 2px 7px 4px 7px;
     margin: 0px 5px 5px 0px;
     font-weight: normal;
     overflow: hidden;
     background-color: #F9F9F9;
-    border-radius: 5px;
+    border-radius: 2px;
     text-decoration: none;
     display: inline-block; /* do not show the dot of list */
 }
+
 
 .article_tags a:hover{
     color: #ffffff;
@@ -308,9 +398,14 @@ div.recentcmt a:hover{
 
 
 div.article_comment{
-    float: right;
-    padding: 0px 10px 0px 10px;
-    margin: 0px 0px 0px 0px;
+    text-align: right;
+    padding: 12px 10px 0px 0px;
+    margin: 37px 0px 0px 0px;
+    background-color: #F9F9F9;
+    height: 37px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-top: 1px solid #E5E5E5;
 }
 
 .article_comment  a {
@@ -318,12 +413,12 @@ div.article_comment{
     color: #999;
     display: block;
     border: 1px solid #DDD;
-    padding: 5px 5px 5px 5px;
+    padding: 5px 20px 7px 20px;
     margin: 0px 10px 5px 0px;
     font-weight: 400;
     overflow: hidden;
     background-color: #F9F9F9;
-    border-radius: 5px;
+    border-radius: 2px;
     text-decoration: none;
     display: inline; /* do not show the dot of list */
 }
@@ -336,11 +431,11 @@ div.article_comment{
     display: block;
     font-size: 12px;
     border: 1px solid #DDD;
-    padding: 5px 10px 5px 10px;
+    padding: 5px 20px 7px 20px;
     font-weight: normal;
     background-color: #2099AB;
     color: #ffffff;
-    border-radius: 5px;
+    border-radius: 2px;
     text-decoration: none;
     display: inline; /* do not show the dot of list */
 }
@@ -354,8 +449,8 @@ div.article_comment{
     font-weight: bolder;
     overflow: hidden;
     text-decoration: none;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
     height: 28px;
 }
 .article_header a:hover{
@@ -372,6 +467,24 @@ div.article_comment{
     text-align: center;
     width: 20px;
     text-decoration: none;
+}
+
+.article_tags a span {
+    border-right: 1px solid #DDD;
+    margin-right: 8px;
+    padding: 6px 6px 6px 0px;
+    text-align: center;
+    width: 10px;
+    text-decoration: none;
+    color: #066C75;
+}
+.article_datetime span {
+    border-right: 1px solid #DDD;
+    margin-right: 8px;
+    padding: 2px 6px 4px 0px;
+    text-align: center;
+    width: 10px;
+    color: #066C75;
 }
 .sidebar  a.active{
     background-color: #2099AB;
@@ -406,14 +519,14 @@ div.article_expand a{
 div.submit_comment{
     clear: both;
     margin: 5px 5px 5px 5px;
-    padding: 5px 5px 5px 5px;
+    padding: 5px 3px 5px 3px;
     border-top: 0px #ddd solid;
 }
 
 div.article_comments{
     clear: both;
-    margin: 50px 5px 5px 5px;
-    padding: 5px 0px 5px 0px;
+    margin: 10px 5px 5px 5px;
+    padding: 10px 0px 5px 0px;
     border-top: 2px #ddd solid;
 }
 
@@ -424,15 +537,18 @@ div.subcomment{
 }
 
 div.each_cmt{
-    margin: 5px 0px 5px 0px;
+    margin: 8px 0px 5px 0px;
     padding: 0px 0px 5px 0px;
     border-bottom: 1px #ddd solid;
     background-color: #F9F9F9;
     border-radius: 3px;
+    font-size: 14px;
+    line-height: 21px;
 }
 
 div.each_cmt div{
-    font-size: 13px;
+    margin: 0px 0px 10px 0px;
+    font-size: 14px;
 }
 
 div.each_cmt p.top{
@@ -460,6 +576,7 @@ div.each_cmt p{
 div.each_cmt span.datetime{
     color: #BABABA;
     float: right;
+    font-weight: normal;
 }
 div.each_cmt a.reply{
     color: #BABABA;
@@ -481,19 +598,22 @@ div.each_cmt a.reply{
 
 
 div.submit_comment label{
-    font-size: 12px;
+    font-size: 14px;
     color: #505050;
 }
 div.submit_comment input, textarea{
     width: 170px;
     color: #505050;
+    border:1px solid #EEEEEE;
+    border-radius: 3px;
+    font-size: 14px;
 }
 
 div.submit_comment input.submit_button{
     color: #ffffff;
     height: 25px;
     background-color: #2099AB;
-    border-radius: 5px;
+    border-radius: 2px;
     padding: 2px 0px 3px 0px;
     width: 170px;
     

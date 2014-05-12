@@ -22,7 +22,7 @@ SECRET_KEY = 'om=ud$0)c353x)72a$&k3qjnn2zrv=p^=vxus2zcalqeio4ktw'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-TEMPLATE_DEBUG = True
+TEMPLATE_DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -37,7 +37,6 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'blog',
-    'django_summernote',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -90,8 +89,7 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, "media/")
 
 
-SUMMERNOTE_CONFIG = {
-    'width': '100%',
-    'height': '480',
-}
+TEMPLATE_DIRS = (
+                 os.path.join(BASE_DIR, "templates/"),
+)
 

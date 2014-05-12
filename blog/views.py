@@ -4,6 +4,8 @@ from django.shortcuts import render
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.http import HttpResponseRedirect, Http404
 
+from django.http import HttpResponse
+
 from models import Article, Tag, Comment, CommentForm
 
 import datetime
@@ -31,6 +33,8 @@ def index(request, tag_slug=""):
     # filter articles by tag_slug
     if tag_slug != "":
         articles = articles.filter(tags__slug__exact=tag_slug)
+        if active_tag == None:
+            raise Http404
     
     
     # get articles of current page.
@@ -152,14 +156,32 @@ def archive(request):
     
     return render(request, 'blog/archive.html', context)
 
+from django.views.decorators.csrf import csrf_exempt
+import markdown2
 
-
+@csrf_exempt
 def article(request, article_id, tag_slug=""):
+    
+    ### Ajax Request ###
+    if request.is_ajax():
+        try:
+            ajax_id = request.POST['ajax_id']
+        except:
+            return HttpResponse('Error From Server')
+        
+        article  = Article.objects.get(id=ajax_id)
+        return HttpResponse(markdown2.markdown(unicode(article.content), extras=["code-friendly"]), content_type="text/plain")
+    
+    
+    
     articles = Article.objects.order_by('datetime').reverse()
     tags     = Tag.objects.order_by('weight')
     
     try:
-        article  = Article.objects.get(id=article_id)
+        if tag_slug != "":
+            article  = Article.objects.filter(tags__slug__exact=tag_slug).get(id=article_id)
+        else:
+            article  = Article.objects.get(id=article_id)
     except Article.DoesNotExist:
         raise Http404
     
@@ -196,7 +218,7 @@ def article(request, article_id, tag_slug=""):
                 'tags': tags,
                 'active_tag': active_tag,
                 'comments': comments_this_page,
-                'allcomments': comments,
+                'allcomments': comments.reverse(),
                 'recentcmts': Comment.objects.order_by('datetime').reverse()[:3], 
                 
                 }
@@ -297,11 +319,6 @@ def get_client_ip(request):
             ip = proxies[0]
 
     return ip
-
-
-
-
-
 
 
 

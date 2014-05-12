@@ -3,10 +3,15 @@
 {% load staticfiles %}
 <head>
     <meta charset="UTF-8" />
-    <title>{% block title %}首页 |笔记{% endblock %}</title>
+    <meta name="baidu-site-verification" content="EsdTr3rGZ5" />
+    <title>{% block title %}首页 | 闲逸笔记{% endblock %}</title>
     
     <link rel="stylesheet" href="{% static 'blog/css/main.css' %}" />
+    <script src="{% static 'blog/js/jquery-2.1.0.min.js' %}" type="text/javascript" ></script>
     <script src="{% static 'blog/js/main.js' %}" type="text/javascript" ></script>
+    
+    <link rel="Shortcut Icon" href="{% static 'blog/image/sleepycat.ico' %}" />
+    <link rel="Bookmark" href="{% static 'blog/image/sleepycat.ico' %}" />
 </head>
 
 
@@ -16,7 +21,7 @@
 <div class="header">
 <div class="wrap">
     <div class="logo">
-        <img src="{% static 'blog/image/logo.jpg' %}" alt="logo"></img>
+        <img src="{% static 'blog/image/logo.jpg' %}" alt="sleepycat.org"></img>
     </div>
     
     <div class="title">
@@ -46,6 +51,8 @@
 <div class="wrap">
     {% block content %}{% endblock %}
     
+    <a href="#" onclick="GoTop();return false;"><img style="position: fixed; bottom:160px; border: none;" alt="top" src="{% static 'blog/image/up.gif' %}"></img></a>
+    <a href="#bottom" onclick="GoBottom();return false;"><img style="position: fixed; bottom:120px;border: none;" alt="bottom" src="{% static 'blog/image/down.gif' %}"></img></a>
     <div class="sidebar">
         {% if tags %}
         <h3>文章分类</h3>
@@ -69,9 +76,11 @@
 
 </div>
 <div class="footer">
-<a href="http://www.djangoproject.com/"><img src="https://www.djangoproject.com/m/img/badges/djangoproject120x25_grey.gif" border="0" alt="A Django project." title="A Django project." /></a>
+<a href="http://www.djangoproject.com/"><img src="{% static 'blog/image/djangoproject120_25_grey.gif' %}" border="0" alt="A Django project." title="A Django project." /></a>
 
-<p>©2010-2013  http://sleepycat.org/</p>
+<p id="bottom">©2010-2014 闲逸笔记</p>
+
+
 
 <script type="text/javascript">
 var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");

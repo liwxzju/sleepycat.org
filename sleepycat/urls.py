@@ -16,7 +16,6 @@ urlpatterns = patterns('',
     url(r'^$',           include('blog.urls')),
     url(r'^blog/',       include('blog.urls', namespace="blog")),
     url(r'^admin/',      include(admin.site.urls)),
-    url(r'^summernote/', include('django_summernote.urls')),
 
 ) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

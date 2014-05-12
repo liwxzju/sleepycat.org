@@ -1,4 +1,6 @@
 {% extends "blog/base.html" %}
+{% load staticfiles %}
+{% load djangomarkdown %}
 
 {% block title %}{{ article.title|safe }} | 闲逸笔记{% endblock %}
 
@@ -13,17 +15,23 @@
 <div class="content">
     <div class="article">
     
-    <div class="article_header"><a title="{{ article.title }}"  href="/blog/{% if active_tag %}tag-{{ active_tag.slug }}/{% endif %}{{ article.id }}">{{ article.title|truncatechars:40 }}</a></div>
+    <div class="article_header"><a title="{{ article.title }}"  href="/blog/{% if active_tag %}tag-{{ active_tag.slug }}/{% endif %}{{ article.id }}">{{ article.title|truncatechars:50 }}</a></div>
     
     
     <div class="article_tags">
         {% for tag in article.tags.all %}
-        <a href="/blog/tag-{{ tag.slug }}" {% if tag == active_tag %} class="active" {% endif %} >{{ tag.title }}</a>
+        <a href="/blog/tag-{{ tag.slug }}" {% if tag == active_tag %} class="active" {% endif %} ><span>&bull;</span>{{ tag.title }}</a>
         {% endfor %}
     </div>
     
-    <div class="article_datetime">{{ article.datetime|date:"Y-m-d H:i" }}</div>
-    <div class="article_content">{{ article.content|safe }}</div>
+    <div class="article_datetime"><span>&bull;</span>{{ article.datetime|date:"Y-m-d H:i" }}</div>
+    <div class="article_content">
+    {{ article.content|djangomarkdown }}
+    {% if article.id != 1 %}
+    <p style="color: #DEDEDE; float: right;">Permalink [<a style="color: #DEDEDE" href="http://sleepycat.org/blog/{{ article.id }}">http://sleepycat.org/blog/{{ article.id }}</a>]</p>
+    {% endif %}
+    
+    </div>
     
     
     
@@ -39,9 +47,14 @@
                     <a href="{{ comment.website }}" style="text-decoration: underline;">{{ comment.user }}</a>
                 {% endif %}
                 
-                <a href="#reply_to_user" onclick="replyto('{{ comment.id }}', '{{ comment.user }}')" class="reply">Reply</a>
-                &nbsp;&nbsp;
+                &nbsp;
                 
+               {% if comment.email == 'skymatrix@126.com' and comment.website == 'http://sleepycat.org/' %}
+                   <span style="background-color: #2099AB; color: #ffffff; display: inline-block; border-radius: 2px;">&nbsp;Blog Author&nbsp;</span>
+                   &nbsp;
+               {% endif %}
+                
+                <a href="#reply_to_user" onclick="replyto('{{ comment.id }}', '{{ comment.user }}')" class="reply">在此条回复下评论</a>
                 
                 <span class="datetime">{{ comment.datetime|date:"Y-m-d H:i" }}</span>
             </p>
@@ -61,7 +74,11 @@
                             <a href="{{ subcomment.website }}" style="text-decoration: underline;">{{ subcomment.user }}</a>
                         {% endif %}
                         
-                        &nbsp;&nbsp;
+                        &nbsp;
+                        
+                        {% if subcomment.email == 'skymatrix@126.com' and subcomment.website == 'http://sleepycat.org/' %}
+                            <span style="background-color: #2099AB; color: #ffffff; display: inline-block; border-radius: 2px;">&nbsp;Blog Author&nbsp;</span>
+                        {% endif %}
                         
                         <span class="datetime">{{ subcomment.datetime|date:"Y-m-d H:i" }}</span>
                     </p>
@@ -72,14 +89,11 @@
             {% endif %}
         {% endfor %}
         
-        <p></p>
+        <p style="height: 5px; margin: 0px; padding: 0px;">&nbsp;</p>
     
     
     {% endfor %}
     </div>
-    
-    
-    
     
     
     
@@ -93,7 +107,7 @@
         </p>
         
         <p>
-        <textarea id="id_content" name="content" style="width:600px; height:100px;" placeholder="评论" title="输入评论内容" id="id_comment" rows="10" cols="40" required></textarea>
+        <textarea id="id_content" name="content" style="width:600px; height:100px; border:1px solid #EEEEEE;" placeholder="评论" title="输入评论内容" id="id_comment" rows="10" cols="40" required></textarea>
         </p>
         
         <p>
