@@ -1,0 +1,12 @@
+
+
+.settings/
+
+.project
+.pydevproject
+
+*.pyc
+
+db.sqlite
+
+
