@@ -62,7 +62,7 @@ def index(request, tag_slug=""):
     context  = {'articles': articles_this_page,
                 'tags': tags,
                 'active_tag': active_tag,
-                'recentcmts': Comment.objects.order_by('datetime').reverse()[:3], 
+                'recentcmts': Comment.objects.order_by('datetime').reverse()[:5], 
                 }
     
     return render(request, 'blog/index.html', context)
@@ -87,7 +87,7 @@ def err404(request):
     context  = {
                 'tags': tags,
                 'err404': True,
-                'recentcmts': Comment.objects.order_by('datetime').reverse()[:3], 
+                'recentcmts': Comment.objects.order_by('datetime').reverse()[:5], 
                 }
     
     return render(request, 'blog/error.html', context)
@@ -110,7 +110,7 @@ def err500(request):
     context  = {
                 'tags': tags,
                 'err500': True,
-                'recentcmts': Comment.objects.order_by('datetime').reverse()[:3], 
+                'recentcmts': Comment.objects.order_by('datetime').reverse()[:5], 
                 }
     
     return render(request, 'blog/error.html', context)
@@ -154,7 +154,7 @@ def archive(request):
     
     context  = {'articles': articles_this_page,
                 'tags': tags,
-                'recentcmts': Comment.objects.order_by('datetime').reverse()[:3], 
+                'recentcmts': Comment.objects.order_by('datetime').reverse()[:5], 
                 }
     
     return render(request, 'blog/archive.html', context)
@@ -221,7 +221,7 @@ def article(request, article_id, tag_slug=""):
                 'active_tag': active_tag,
                 'comments': comments_this_page,
                 'allcomments': comments.reverse(),
-                'recentcmts': Comment.objects.order_by('datetime').reverse()[:3], 
+                'recentcmts': Comment.objects.order_by('datetime').reverse()[:5], 
                 
                 }
     return render(request, 'blog/article.html', context)
@@ -263,7 +263,7 @@ def comment(request, article_id):
                 
                 context  = {
                             'tags': tags,
-                            'recentcmts': Comment.objects.order_by('datetime').reverse()[:3], 
+                            'recentcmts': Comment.objects.order_by('datetime').reverse()[:5], 
                             'f': f,
                             }
                 
@@ -288,7 +288,7 @@ def comment(request, article_id):
             
             context  = {
                         'tags': tags,
-                        'recentcmts': Comment.objects.order_by('datetime').reverse()[:3], 
+                        'recentcmts': Comment.objects.order_by('datetime').reverse()[:5], 
                         'errmsg': errmsg,
                         }
             
