@@ -1,17 +1,27 @@
 
-### Source code of my blog. Powered by Python 2.7 and Django1.6.
 
-===============
+Project Summary
+----------------------------
 
-##### Python Packages:
+Source code of my blog site, which is powered by Python3.4 and Django1.7.
+
+
+
+
+Relyed Python Packages
+----------------------------
 
 + Django
 
 + Markdown2
 
-===============
 
-##### Blog Address:
+
+
+Blog Address
+----------------------------
 
 + [http://sleepycat.org/](http://sleepycat.org/)
+
+
 
