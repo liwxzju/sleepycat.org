@@ -3,7 +3,7 @@
 {% block title %}存档 | 闲逸笔记{% endblock %}
 
 {% block navigator %}
-    <li><a href="/blog">首页</a></li>
+    <li><a href="/">首页</a></li>
     <li><a href="/blog/archive" class="active">存档</a></li>
     <li><a href="/blog/1/">关于</a></li>
 {% endblock %}
@@ -16,7 +16,7 @@
     {% if articles %}
         {% for article in articles %}
         
-        <p style="font-size: 14px; line-height: 16px; text-indent: 0px; margin-top: 3px; margin-bottom: 3px; ">
+        <p style="font-size: 14px; line-height: 16px; text-indent: 0px; margin: 10px 0px 5px 0px; padding: 0px 0px 2px 0px; ">
         
         {{ article.datetime|date:"Y-m-d" }} &nbsp;
         <a title="{% for tag in article.tags.all %}{{ tag.title }} {% endfor %}" href="/blog/{{ article.id }}" style="font-weight: normal; display: inline-table; width: 580px; vertical-align: top;">{{ article.title }}</a>
