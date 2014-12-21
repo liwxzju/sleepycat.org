@@ -309,6 +309,7 @@ def get_client_ip(request):
     ip = remote_address
     # try to get the first non-proxy ip (not a private ip) from the
     # HTTP_X_FORWARDED_FOR
+    '''
     x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
     if x_forwarded_for:
         proxies = x_forwarded_for.split(',')
@@ -319,7 +320,8 @@ def get_client_ip(request):
         # take the first ip which is not a private one (of a proxy)
         if len(proxies) > 0:
             ip = proxies[0]
-
+    '''
+    
     return ip
 
 
